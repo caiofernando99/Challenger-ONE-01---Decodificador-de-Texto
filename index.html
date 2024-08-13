@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+
+        <img class="logo" src="./assets/logo-alura.svg" alt="logo da alura">
+        
+        <h1>Challenge ONE #01</h1>
+
+       <img id="toggle-theme" class="iconeTrocaTema" src="./assets/dark-mode.svg" alt="icone de trocaTema" onclick="trocaTema()">
+
+    </header>
+
+    <main>
+
+        <section class="section-esquerda">
+            <textarea id="textArea" class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+            <div class="info">
+                <img src="assets/esclamacao.svg" alt="icone de esclamação">
+                <h6>Apenas letras minúsculas e sem acento.</h6> 
+            </div>
+            <div class="botoes">
+                <button id="botaoCriptografar" class="botaoCriptografar" onclick="botaoCriptografar()">Criptografar</button>
+                <button id="botaoDescriptografar" class="botaoDescriptografar" onclick="botaoDescriptografar()">Descriptografar</button>
+            </div>
+        </section>
+
+        <section class="section-direita" id="sectionDireita">
+            <textarea id="resposta" class="resposta" cols="20" rows="10" style="display: none;"></textarea>
+            <p class="mensagem-destaque">Nenhuma mensagem encontrada</p>
+            <p class="mensagem">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            <button id="botaoCopiar" class="botaoCopiar" style="display: none;">Copiar</button>
+        </section>
+
+    </main>
+
+    <footer></footer>
+</body>
+</html>
