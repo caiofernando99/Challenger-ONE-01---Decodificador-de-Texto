@@ -7,6 +7,9 @@
     --quarternaria: #D8DFE8;
     --quarternariaHover: #d0d9e4;
     --texto-resposta:#495057;
+    --logo-alura: url(./assets/logo-alura.svg);
+    --icone-troca-tema: invert(20%) sepia(100%) saturate(400%) hue-rotate(180deg); 
+    --icone-troca-tema-hover: invert(20%) sepia(100%) saturate(100%) hue-rotate(180deg); 
 }
 
 * {
@@ -20,8 +23,14 @@
 }
 
 body {
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--primaria);
     color: var(--texto-resposta);
+    background-image: url(./assets/logo\ ONE.webp);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100px;
 }
 
 body.dark-mode {
@@ -33,12 +42,17 @@ body.dark-mode {
     --quarternaria: #363a4c;
     --quarternariaHover: #3b4054;
     --texto-resposta: #d1d1d1;
+    --logo-alura: url(./assets/logo-alura-dark-mode.png);
     background-color: var(--primaria);
     color: var(--texto-resposta);
+    --icone-troca-tema: invert(25%) sepia(100%) saturate(400%) hue-rotate(180deg); 
+    --icone-troca-tema-hover: invert(33%) sepia(100%) saturate(500%) hue-rotate(180deg); 
 }
 
-body {
+.container {
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 header {
@@ -51,28 +65,35 @@ header {
     padding: 0.5%;
     border-radius: 24px ;
     background-color: var(--terciaria);
-    width: 100px;
+    width: 90px;
     height: 150px;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.07);
+    background-image: var(--logo-alura);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position-x: 25px;
+    background-position-y: 7px;
 }
 
 .logo {
-    width: 35px;
+    filter: opacity(0%);
+    width: 35px; 
     position: relative;
 }
 
-
 h1{
+    color: var(--texto-resposta);
     font-size: 1rem;
     font-weight: 600;
 }
 
 .iconeTrocaTema {
     width: 35px;
-    filter: grayscale(100%);
+    filter: opacity(100%);
+    filter: var(--icone-troca-tema);
 }
 .iconeTrocaTema:hover {
-    filter: invert(33%) sepia(100%) saturate(200%) hue-rotate(180deg);
+    filter: var(--icone-troca-tema-hover);
 }
 
 main {
@@ -89,7 +110,7 @@ main {
     color:var(--secundaria);
     margin-top: 3%;
     text-transform: lowercase;
-    height: 82%;
+    height: 82.5%;
     width: 90%;
     background: none;
     resize: none;
@@ -108,10 +129,8 @@ main {
     border: none;
     background-color: transparent;
     color: var(--secundaria);
-    margin-top: 3%;
-    width: 80%;
-    height: 75%;
-    max-width: 90%;
+    width: 97%;
+    height: 100%;
     resize: none;
     font-size: 2rem;
 }
@@ -220,9 +239,35 @@ h6 {
     margin-bottom: 100px;
 }
 
+.assinatura {
+    align-items: center;
+    background-color: var(--terciaria);
+    border-radius: 16px;
+    width: max-content;
+    display: flex;
+    gap: 10px;
+    margin: 1%;
+    padding: 0.6%;
+}
+.texto-assinatura{
+    font-size: 0.8rem;
+}
+.github , .linkedin {
+    width: 1.5rem;
+    filter: var(--icone-troca-tema);
+}
+.github:hover , .linkedin:hover{ 
+    filter: var(--icone-troca-tema-hover);
+}
+  
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
     body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
         flex-direction: column;
         align-items: center;
     }
@@ -237,9 +282,6 @@ h6 {
     main {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin: 1%;
-        padding: 1%;
         gap: 20px;
     }
 
@@ -252,15 +294,10 @@ h6 {
         font-size: 1rem;
         width: 97%;
     }
-
-    .text-area {
-        margin-bottom: 32%;
-    }
     
     .section-esquerda {
-        margin-top: 15%;
-        padding: 0%;
         justify-content: flex-start;
+
     }
 
     .section-direita {
@@ -272,9 +309,11 @@ h6 {
         justify-content: flex-start;
         background-image: none;
     }
+
     .mensagem-destaque {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
     }
+
     .mensagem{
         margin-bottom: 0px;
         font-size: 1.3rem;
@@ -289,6 +328,11 @@ h6 {
         align-items: center;
     }
 
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     header{
         margin-top: 2%;
         width: 280px;
@@ -297,12 +341,11 @@ h6 {
     }
 
     main {
+        margin: none;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 1%;
-        padding: 1%;
-        gap: 20px;
+        gap:20px;
     }
 
     .botoes {
@@ -315,13 +358,15 @@ h6 {
     }
 
     .text-area {
-        margin-bottom: 25%;
+        width: 100%;
+        min-height: 400px;
     }
     
     .section-esquerda {
-        margin-top: 15%;
         padding: 0%;
-        justify-content: flex-start;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
     }
 
     .section-direita {

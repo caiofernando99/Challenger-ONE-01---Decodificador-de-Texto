@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador</title>
+    <title>Decodificador de texto</title>
+    <link rel="icon" href="./assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,18 +12,15 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <section class="container">
     <header>
-
-        <img class="logo" src="./assets/logo-alura.svg" alt="logo da alura">
-        
+        <a href="https://www.alura.com.br/">
+            <img class="logo" src="./assets/logo-alura-dark-mode.png" alt="logo da alura"></a>
         <h1>Challenge ONE #01</h1>
-
        <img id="toggle-theme" class="iconeTrocaTema" src="./assets/dark-mode.svg" alt="icone de trocaTema" onclick="trocaTema()">
-
     </header>
 
     <main>
-
         <section class="section-esquerda">
             <textarea id="textArea" class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
             <div class="info">
@@ -41,9 +39,18 @@
             <p class="mensagem">Digite um texto que você deseja criptografar ou descriptografar.</p>
             <button id="botaoCopiar" class="botaoCopiar" style="display: none;">Copiar</button>
         </section>
+    </section>
 
     </main>
 
-    <footer></footer>
+    <footer class="assinatura">
+        <p class="texto-assinatura">dev: Caio Fernando</p>
+        <a href="https://www.linkedin.com/in/caiofernandoribeiro/">
+            <img class="linkedin" src="./assets/linkedin.png" alt="logo linkedin"></a>
+        <a href="https://github.com/caiofernando99">
+            <img class="github" src="./assets/github-logo.png" alt="logo github"> </a>
+       
+    </footer>
+
 </body>
 </html>
