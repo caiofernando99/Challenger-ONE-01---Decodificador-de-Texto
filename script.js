@@ -82,6 +82,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
 
+    function bloquearCaracteresEspeciais(event) {
+        var regex = /[^a-zA-Z0-9 ]/g;
+        if (regex.test(event.key)) {
+            event.preventDefault();
+        }
+    }
+
+    function inicializar() {
+        var textarea = document.getElementById("textArea");
+        textarea.addEventListener("keypress", bloquearCaracteresEspeciais);
+    }
+
+    window.onload = inicializar;
+
+
     function trocaTema() {
         document.body.classList.toggle('dark-mode');
       }
